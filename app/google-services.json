@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "538357197833",
+    "project_id": "watchshopping-7f80a",
+    "storage_bucket": "watchshopping-7f80a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:538357197833:android:34ab0ab45a74030a441cd8",
+        "android_client_info": {
+          "package_name": "duc.thanhhoa.watchshopping"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDli7oa1miXlLFb2gICNEHyyHtIRPHdsVA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

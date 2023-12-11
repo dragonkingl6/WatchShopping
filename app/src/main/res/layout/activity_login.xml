@@ -60,7 +60,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:onClick="signUp"
+        android:onClick="signIn"
         app:layout_constraintTop_toBottomOf="@+id/password_login"/>
 
     <TextView
@@ -84,7 +84,7 @@
         android:textStyle="bold"
         android:textColor="@color/purple_700"
         app:layout_constraintVertical_bias="0"
-        android:onClick="signIn"
+        android:onClick="signUp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toTopOf="@+id/textView" />

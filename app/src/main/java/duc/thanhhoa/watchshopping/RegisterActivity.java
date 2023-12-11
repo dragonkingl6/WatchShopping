@@ -7,15 +7,26 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
     EditText name, email, password;
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+
+        auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+            finish();
+        }
         name = findViewById(R.id.name_reg);
         email = findViewById(R.id.email_reg);
         password = findViewById(R.id.password_reg);
@@ -43,10 +54,17 @@ public class RegisterActivity extends AppCompatActivity {
             password.setError("Password must be >= 6 characters");
             return;
         }
-        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+        //create user
+        auth.createUserWithEmailAndPassword(userEmail,userPassword).addOnCompleteListener(task -> {
+            if(task.isSuccessful()){
+                startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+                finish();
+            }else{
+                Toast.makeText(RegisterActivity.this, "Error !"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void signIn(View view) {
-        startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
     }
 }
