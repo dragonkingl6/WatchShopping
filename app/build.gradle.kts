@@ -4,7 +4,7 @@ plugins {
 
 android {
     namespace = "duc.thanhhoa.watchshopping"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "duc.thanhhoa.watchshopping"
